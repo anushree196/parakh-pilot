@@ -1,0 +1,19 @@
+A. SEAL
+  clean records accepted      1000/1000
+  one-field edits rejected     1000/1000
+  replays rejected             200/200
+  tail deletions detected      100/100
+
+B. CONTRIBUTOR TEST (sklearn digits, 10 contributors x 89 images, BH q=0.05)
+  flip   2%: poisoned contributor flagged   1.0% | any clean contributor flagged  2.0% | sample recall 99.8%
+  flip   5%: poisoned contributor flagged   5.5% | any clean contributor flagged  2.0% | sample recall 100.0%
+  flip  10%: poisoned contributor flagged  57.5% | any clean contributor flagged  1.0% | sample recall 100.0%
+  flip  15%: poisoned contributor flagged  95.5% | any clean contributor flagged  0.5% | sample recall 99.9%
+  flip  20%: poisoned contributor flagged 100.0% | any clean contributor flagged  0.5% | sample recall 99.9%
+  all-clean runs with any contributor flagged: 6/200 (3.0%); dimmer-camera contributor flagged 2/200
+  per-detector false-positive rate on held-out clean split: 6.8%
+
+C. edit-and-rehash with attacker's own key rejected: 1000/1000
+   all tampering trials rejected: 2300/2300
+   all-clean false alarm 6/200: 95% Wilson CI 1.4% to 6.4%
+   15% poison caught 191/200: 95% Wilson CI 91.7% to 97.6%
